@@ -1,6 +1,6 @@
 (function() {
     angular.module('app')
-        .component('regristration', {
+        .component('registration', {
             templateUrl: 'registration/registration.html',
             controller: 'RegistrationController'
         });

@@ -8,8 +8,8 @@
 
 
 <h2>Modal Login Form</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<div id="formdiv">
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
   
@@ -21,10 +21,10 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" class="inputs" name="uname" required>
 
       <label for="psw"><b>Email</b></label>
-      <input type="password" placeholder="Enter Email" name="psw" required>
+      <input type="password" placeholder="Enter Email" class="inputs" name="psw" required>
         
       <button type="submit" id="regButton">Register</button>
       <label>
@@ -38,7 +38,7 @@
     </div>
   </form>
 </div>
-
+</div>
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
