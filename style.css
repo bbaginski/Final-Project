@@ -1,11 +1,20 @@
-body{
-  background-color: burlywood;
-  display: flex;  
-  align-items: center;
+ 
+
+#Grid .row{
+  display:flex;
+  width:100%;
+}
+#Grid .row > div{
+  flex:1;
 }
 
-#contentContainer{
-align-content: center;
-width: 250px;
-height: 250px;
+#Grid .cell{ 
+  border: solid 1px #000;
+  min-height: 100px;
+}
+#Grid .Row-lable{
+  border-top: solid 1px #000;
+  border-bottom: solid 1px #000;
+  min-height: 100px; 
+ 
 }

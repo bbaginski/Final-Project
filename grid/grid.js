@@ -1,9 +1,8 @@
 (function() {
-    angular
-        .module('app')
-        .controller('grid', function() {
-            var vm = this;
+    angular.module('app')
+        .component('grid', {
+            templateUrl: 'grid/grid.html',
+            controller: 'GridController'
         });
-
 
 })();
