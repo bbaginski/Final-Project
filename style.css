@@ -1,20 +1,69 @@
- 
 
+
+*{
+   box-sizing: border-box;
+ }
+.PageWrap{
+  width:96%;
+  margin:0 auto;
+}
+
+/* *************************************************************************** */
+/* Registration Componet  */
+/* *************************************************************************** */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *************************************************************************** */
+/* Grid Componet  */
+/* *************************************************************************** */
 #Grid .row{
   display:flex;
   width:100%;
+  text-align: center;
 }
 #Grid .row > div{
   flex:1;
 }
 
 #Grid .cell{ 
-  border: solid 1px #000;
-  min-height: 100px;
+  border: solid 1px #333;
+  min-height: 50px; 
 }
-#Grid .Row-lable{
-  border-top: solid 1px #000;
-  border-bottom: solid 1px #000;
-  min-height: 100px; 
- 
+#Grid .row-lable{
+  border-top: solid 1px #000; 
+  border-right: solid 2px #000;
+  font-size:40px; 
+  padding:30px 0 0 0; 
+} 
+#Grid .col-label{   
+  border-left: solid 1px #000; 
+  border-bottom: solid 2px #000;
+  min-height: 50px; 
+  font-size:40px; 
+  padding:30px 0 0 0; 
+} 
+#Col-label-header .row-lable{
+border:none;
 }
+
+
+
+
+/* *************************************************************************** */
+/* Stats-schedule Componet  */
+/* *************************************************************************** */
