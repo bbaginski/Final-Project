@@ -189,17 +189,20 @@ span.psw {
   background: lightblue;
   cursor: pointer;
 }
+#Grid .cell.selected {
+background:yellow;
+}
 #Grid .row-lable {
   border-top: solid 1px #000;
   border-right: solid 2px #000;
-  font-size: 40px;
+  font-size: 30px;
   padding: 30px 0 0 0;
 }
 #Grid .col-label {
   border-left: solid 1px #000;
   border-bottom: solid 2px #000;
   min-height: 50px;
-  font-size: 40px;
+  font-size: 30px;
   padding: 30px 0 0 0;
 }
 #Col-label-header .row-lable {
@@ -215,7 +218,7 @@ span.psw {
   border-left: solid 1px #000;
   border-bottom: solid 2px #000;
   min-height: 50px;
-  font-size: 40px;
+  font-size: 30px;
   padding: 30px 0 0 0;
 }
 
