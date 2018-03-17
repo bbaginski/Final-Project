@@ -12,8 +12,6 @@ body {
   width: 75%;
   min-width: 360px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -175,15 +173,37 @@ span.psw {
 /* *************************************************************************** */
 /* Grid Componet  */
 /* *************************************************************************** */
-#Grid .row {
+.row {
   display: flex;
   width: 100%;
   text-align: center;
 }
-#Grid .row > div {
-  flex: 1; 
+.row > div {
+  flex: 1;   
+  border:solid 1px transparent;
 }
-
+#Scoreboard{
+max-width:600px;
+color:#fff;
+background:#000;
+margin:25px auto;
+border-radius: 5px;
+box-shadow:15px 15px 18px rgba(0, 0, 0, 0.4);
+padding:10px;
+}
+#Scoreboard .score{
+  border:solid 1px #fff;
+  padding:2px;
+  margin:5px;
+}
+#Scoreboard .quarter{  
+  margin:5px;
+}
+#Grid-wrap{  
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
 #Grid .cell {
   border: solid 1px #333;
   min-height: 50px;
@@ -194,7 +214,7 @@ span.psw {
   cursor: pointer;
 }
 #Grid .cell.selected {
-background:#ed174c;
+background:#006bb6;
 color:#fff;
 border-color: #fff;
 }
@@ -238,16 +258,15 @@ border-color: #fff;
   min-height: 100px;
 }
 #Grid .taken{
-  background-color: #006bb6;
+  background-color: #ed174c;
   color:#fff;
   border-color: #fff;
 }
 #Grid .taken:hover{
   border-color: #ed174c;
-  text-shadow: 0px 1px 0px #000;
-  color:#ed174c;
+  text-shadow: 0px 1px 0px #000; 
   cursor:not-allowed;
-  background-color: #006bb6;
+  background-color: #ed174c;
   } 
 #Grid .winner{
   background-color: yellow;
