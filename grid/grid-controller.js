@@ -18,6 +18,8 @@
             vm.homeTeamBet = [6,7,8,9,1,2,3,4,5,0];
             vm.awayTeamScore = [1,0,0,0];
             vm.homeTeamScore = [2,0,0,0];
+
+             
             var grid = document.getElementById('Grid'); 
             var name = "Bob"
             
@@ -38,9 +40,13 @@
                  
               }
               
-              grid.addEventListener('click', cellClick, false)
+              grid.addEventListener('click', cellClick, false);
 
-            
+            //   var x = document.getElementsByClassName("cell")[0].getAttribute("col-num"); 
+            //   var y = document.getElementsByClassName("cell")[0].getAttribute("row-num");
+            //   if  (awayTeamScore[0] === x && homeTeamScore === y){
+            //         event.target.classList.add("winner"); 
+            //   }
 
 
 
