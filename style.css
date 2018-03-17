@@ -1,8 +1,7 @@
-
 * {
   box-sizing: border-box;
 }
-img{
+img {
   max-width: 100%;
 }
 body {
@@ -12,25 +11,27 @@ body {
   width: 75%;
   min-width: 360px;
   margin: 0 auto;
-  overflow: hidden;
+}
+footer{
+  text-align: right;
+  margin:20px 0 0;
+  font-size: 12px;
 }
 
 /* *************************************************************************** */
 /* Registration Componet  */
 /* *************************************************************************** */
 
-
-
-#fieldsContainer{
+#fieldsContainer {
   background-color: white;
   width: 450px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 10px;
   margin: 200px auto 0;
   padding: 25px;
-  
-}
 
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+}
 
 .btn {
   background: #3498db;
@@ -59,19 +60,17 @@ body {
   text-decoration: none;
 }
 
-
-
-#regButton{
-    background-color: aqua;
-    border: 1px, solid;
+#regButton {
+  background-color: aqua;
+  border: 1px, solid;
 }
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 /* *************************************************************************** */
@@ -83,44 +82,47 @@ input[type=text] {
   text-align: center;
 }
 .row > div {
-  flex: 1;   
-  border:solid 1px transparent;
+  flex: 1;
+  border: solid 1px transparent;
 }
-#Scoreboard{
-max-width:600px;
-color:#fff;
-background:#000;
-margin:25px auto;
-border-radius: 5px;
-box-shadow:15px 15px 18px rgba(0, 0, 0, 0.4);
-padding:10px;
+#Scoreboard {
+  max-width: 600px;
+  color: #fff;
+  background: #000;
+  margin: 25px auto;
+  border-radius: 5px;
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  z-index: 5;
 }
-#Scoreboard .score{
-  border:solid 1px #fff;
-  padding:2px;
-  margin:5px;
+#Scoreboard .score {
+  border: solid 1px #fff;
+  padding: 2px;
+  margin: 5px;
 }
-#Scoreboard .quarter{  
-  margin:5px;
+#Scoreboard .quarter {
+  margin: 5px;
 }
-#Grid-wrap{  
+#Grid-wrap {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 #Grid .cell {
   border: solid 1px #333;
   min-height: 50px;
-  text-transform: uppercase;
+  text-transform: uppercase;  
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 #Grid .cell:hover {
   background: lightblue;
   cursor: pointer;
 }
 #Grid .cell.selected {
-background:#006bb6;
-color:#fff;
-border-color: #fff;
+  background: #006bb6;
+  color: #fff;
+  border-color: #fff;
 }
 #Grid .row-lable {
   border-top: solid 1px #000;
@@ -161,19 +163,22 @@ border-color: #fff;
   border-bottom: solid 1px #000;
   min-height: 100px;
 }
-#Grid .taken{
+#Grid .taken {
   background-color: #ed174c;
-  color:#fff;
+  color: #fff;
   border-color: #fff;
 }
-#Grid .taken:hover{
+#Grid .taken:hover {
   border-color: #ed174c;
-  text-shadow: 0px 1px 0px #000; 
-  cursor:not-allowed;
+  cursor: not-allowed;
   background-color: #ed174c;
-  } 
-#Grid .winner{
+}
+#Grid .winner {
   background-color: yellow;
-  color:#000;
+  color: #000;
   border-color: #000;
+  cursor: not-allowed;
+}
+#Grid .winner:hover {
+  background-color: yellow;
 }
