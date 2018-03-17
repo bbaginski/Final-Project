@@ -8,6 +8,12 @@
             vm.showName = function(num){
                 return savedSquare[num];
             }
+            vm.isTaken = function(num){
+                if(savedSquare[num] !== undefined){
+                    return "taken";
+                }
+                
+            }
             vm.awayTeamScore = [5,4,3,2,1,0,9,8,7,6];
             vm.homeTeamScore = [6,7,8,9,1,2,3,4,5,0];
             var grid = document.getElementById('Grid'); 

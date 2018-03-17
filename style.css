@@ -2,8 +2,11 @@
 * {
   box-sizing: border-box;
 }
+img{
+  max-width: 100%;
+}
 body {
-  background: url(images/basketball-floor-texture.jpg);
+  background: url(images/basketball-floor-texture.jpg) center;
 }
 .PageWrap {
   width: 75%;
@@ -178,19 +181,22 @@ span.psw {
   text-align: center;
 }
 #Grid .row > div {
-  flex: 1;
+  flex: 1; 
 }
 
 #Grid .cell {
   border: solid 1px #333;
   min-height: 50px;
+  text-transform: uppercase;
 }
 #Grid .cell:hover {
   background: lightblue;
   cursor: pointer;
 }
 #Grid .cell.selected {
-background:yellow;
+background:#ed174c;
+color:#fff;
+border-color: #fff;
 }
 #Grid .row-lable {
   border-top: solid 1px #000;
@@ -230,4 +236,21 @@ background:yellow;
   border-top: solid 1px #000;
   border-bottom: solid 1px #000;
   min-height: 100px;
+}
+#Grid .taken{
+  background-color: #006bb6;
+  color:#fff;
+  border-color: #fff;
+}
+#Grid .taken:hover{
+  border-color: #ed174c;
+  text-shadow: 0px 1px 0px #000;
+  color:#ed174c;
+  cursor:not-allowed;
+  background-color: #006bb6;
+  } 
+#Grid .winner{
+  background-color: yellow;
+  color:#000;
+  border-color: #000;
 }

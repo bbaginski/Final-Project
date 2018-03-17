@@ -1,11 +1,11 @@
 <div id="Grid">
     <div id="Col-label-header" class="row">
-        <div class="row-lable"></div>
+        <div class="row-lable"><img src="/images/pistons.png" alt="pistons"/></div>
         <div ng-repeat="Away in $ctrl.awayTeamScore" class="col-label">{{Away}} </div> 
     </div>
     <div ng-repeat="Home in $ctrl.homeTeamScore" id="Row-{{$index + 1}}" class="row">
         <div class="row-lable">{{Home}}</div>
-        <div ng-repeat="Away in $ctrl.awayTeamScore" id="Cell-{{$index + 1 + ($parent.$index * 10)}}" class="cell" col-num="{{Away}}" row-num="{{Home}}">{{$ctrl.showName($index + 1 + ($parent.$index * 10))}}</div>        
+        <div ng-repeat="Away in $ctrl.awayTeamScore" id="Cell-{{$index + 1 + ($parent.$index * 10)}}" class="cell  {{$ctrl.isTaken($index + 1 + ($parent.$index * 10))}}" col-num="{{Away}}" row-num="{{Home}}">{{$ctrl.showName($index + 1 + ($parent.$index * 10))}}</div>        
     </div>
 
 
