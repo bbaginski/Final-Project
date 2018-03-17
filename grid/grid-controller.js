@@ -13,23 +13,27 @@
             var grid = document.getElementById('Grid'); 
             var name = "Bob"
             
-            function cellClick(event) {
-                if (event.target.classList.contains('cell')){ 
-                     var cellId = event.target.id                       
-                     var cellIdNum = cellId.replace(/\D/g,'');  
+            function cellClick(event) {                
+                var cellId = event.target.id                       
+                var cellIdNum = cellId.replace(/\D/g,''); 
+
+                if (event.target.classList.contains('selected')){                     
+                    event.target.classList.remove("selected"); 
+                    event.target.innerHTML = "" ;                 
+                    savedSquare[cellIdNum] = undefined;      
+               }
+               else if (event.target.classList.contains('cell') && savedSquare[cellIdNum] === undefined){  
                      event.target.classList.add("selected"); 
                      event.target.innerHTML = name ;                
                      savedSquare[cellIdNum] = name;
-                     console.log(savedSquare)
                 }
+                
+                console.log(savedSquare)
               }
               
               grid.addEventListener('click', cellClick, false)
 
-              var cells = document.querySelectorAll('#Row1 .cell');
-                Array.prototype.forEach.call(cells, function(elements, index) {
-                    // conditional here.. access elements
-                });
+            
 
 
 
