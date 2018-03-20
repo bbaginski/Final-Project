@@ -101,7 +101,17 @@ input[type="text"] {
   margin: 5px;
 }
 #Scoreboard .quarter {
+  padding: 2px;
   margin: 5px;
+}
+#Scoreboard .winnerName {
+  padding: 2px;
+  margin: 5px;
+  text-transform: uppercase;
+  color:yellow;  
+  -webkit-mask-image: linear-gradient(-75deg, #000 30%, rgba(0,0,0,.6) 50%, #000 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 4s infinite;
 }
 #Grid-wrap {
   background: #fff;
@@ -177,7 +187,21 @@ input[type="text"] {
   background-color: yellow;
   color: #000;
   border-color: #000;
-  cursor: not-allowed;
+  cursor: not-allowed;  
+  -webkit-mask-image: linear-gradient(-75deg, #000 30%, rgba(0,0,0,.6) 50%, #000 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
 }
 #Grid .winner:hover {
   background-color: yellow;

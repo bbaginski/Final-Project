@@ -30,8 +30,8 @@
 
     vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
     vm.awayTeamBet = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6];
-    vm.homeTeamScore = [6, 10, 0, 0];
-    vm.awayTeamScore = [2, 12, 0, 0];
+    vm.homeTeamScore = [6, 6, 0, 0];
+    vm.awayTeamScore = [2, 5, 0, 0];
     vm.winList = ["-----","-----","-----","-----"]
 
     var grid = document.getElementById("Grid");
