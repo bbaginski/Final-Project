@@ -9,12 +9,14 @@
     <div id="hometeamScore" class = "row"> 
         <div class="team">Pistons</div>
         <div ng-repeat="score in $ctrl.homeTeamScore track by $index" id="hometeamQ{{$index + 1}}" class="score">{{score}}</div>
-
- 
     </div>
     <div id="awayteamScore" class = "row"> 
         <div class="team">Away</div>          
         <div ng-repeat="score in $ctrl.awayTeamScore track by $index" id="awayteamQ{{$index + 1}}" class="score">{{score}}</div>
+    </div>
+    <div id="winnerList" class = "row"> 
+        <div class="team">Winners</div>          
+        <div ng-repeat="win in $ctrl.winList track by $index" id="winnerQ{{$index + 1}}" class="winnerName">{{win}}</div>
     </div>
 </div>
 <div id="Grid-wrap">
@@ -25,7 +27,7 @@
     </div>
     <div ng-repeat="Home in $ctrl.homeTeamBet" id="Row-{{$index + 1}}" class="row">
         <div class="row-lable">{{Home}}</div>
-        <div ng-repeat="Away in $ctrl.awayTeamBet" id="Cell-{{$index + 1 + ($parent.$index * 10)}}" class="cell  {{$ctrl.isTaken($index + 1 + ($parent.$index * 10))}}" col-num="{{Away}}" row-num="{{Home}}">{{$ctrl.showName($index + 1 + ($parent.$index * 10))}}</div>        
+        <div ng-repeat="Away in $ctrl.awayTeamBet" id="Cell-{{$ctrl.calcId($index, $parent.$index) }}" class="cell {{$ctrl.isTaken( $ctrl.calcId($index, $parent.$index))}}  {{$ctrl.isWinner(Home, Away, $ctrl.calcId($index, $parent.$index))}}" col-num="{{Away}}" row-num="{{Home}}">{{$ctrl.showName( $ctrl.calcId($index, $parent.$index))}}</div>        
     </div>
 </div>
 </div>
