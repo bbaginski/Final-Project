@@ -19,8 +19,8 @@
             vm.awayTeamScore = [1,0,0,0];
             vm.homeTeamScore = [2,0,0,0];
             var grid = document.getElementById('Grid'); 
-            var name = "Bob"
-            
+           // var name = "Bob"
+            vm.name = "";
             function cellClick(event) {                
                 var cellId = event.target.id                       
                 var cellIdNum = cellId.replace(/\D/g,''); 
@@ -32,8 +32,8 @@
                }
                else if (event.target.classList.contains('cell') && savedSquare[cellIdNum] === undefined){  
                      event.target.classList.add("selected"); 
-                     event.target.innerHTML = name ;                
-                     savedSquare[cellIdNum] = name;
+                     event.target.innerHTML = vm.name ;                
+                     savedSquare[cellIdNum] = vm.name;
                 }
                  
               }
