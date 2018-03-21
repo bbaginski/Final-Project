@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 * {
   box-sizing: border-box;
 }
@@ -11,6 +12,7 @@ body {
   width: 75%;
   min-width: 360px;
   margin: 0 auto;
+  font-family: 'Fjalla One', sans-serif;
 }
 footer{
   text-align: right;
@@ -95,6 +97,9 @@ input[type="text"] {
   padding: 10px;
   z-index: 5;
 }
+#Scoreboard .team {
+  align-self:center;
+}
 #Scoreboard .score {
   border: solid 1px #fff;
   padding: 2px;
@@ -123,7 +128,7 @@ input[type="text"] {
   border: solid 1px #333;
   min-height: 50px;
   text-transform: uppercase;  
-  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
 }
 #Grid .cell:hover {
   background: lightblue;
@@ -202,7 +207,6 @@ input[type="text"] {
     -webkit-mask-position: -50%;
   }
 }
-
 #Grid .winner:hover {
   background-color: yellow;
 }

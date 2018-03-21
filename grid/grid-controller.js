@@ -1,11 +1,11 @@
 (function() {
-    angular.module("app").controller("GridController", function($http) {
+    angular.module("app").controller("GridController", function($http, UserDataFactory) {
 
         var vm = this;
         var savedSquare = [undefined, "bob", undefined, undefined, "brian"];
         vm.awayTeamScore = [];
         vm.homeTeamScore = [];
-
+      
         $http({
             method: "GET",
             url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315",
@@ -15,7 +15,8 @@
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
             }
         }).then(function mySuccess(response) {
-            var game = response.data.scoreboard.gameScore[0];
+            var game = response.data.scoreboard.gameScore[0];            
+            // var awayTeamName = response.data.scoreboard.fullgameschedule.gameentry.awayTeam.name["pistons"];
             var quarterSummary = game.quarterSummary.quarter;
             vm.homeTeamScore = quarterSummary.map(function(quarter) {
                 return quarter.homeScore;
@@ -63,12 +64,12 @@
         vm.winList = ["-----", "-----", "-----", "-----"]
 
         var grid = document.getElementById("Grid");
-        var name = "Bob";
-
+        var name = UserDataFactory.getData() || [];
+        var betCount = 0;
         function cellClick(event) {
             var cellId = event.target.id;
             var cellIdNum = cellId.replace(/\D/g, "");
-
+          
             if (event.target.classList.contains("selected")) {
                 event.target.classList.remove("selected");
                 event.target.innerHTML = "";
@@ -81,6 +82,8 @@
                 event.target.classList.add("selected");
                 event.target.innerHTML = name;
                 savedSquare[cellIdNum] = name;
+                // UserDataFactory.setBet(cellIdNum[betCount]) || [];
+                // betCount++
             }
         }
 
