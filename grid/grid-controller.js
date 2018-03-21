@@ -1,5 +1,5 @@
 (function() {
-  angular.module("app").controller("GridController", function() {
+  angular.module("app").controller("GridController", function(UserDataFactory) {
 
     var vm = this;
     var savedSquare = [undefined, "bob", undefined, undefined, "brian"];
@@ -35,7 +35,7 @@
     vm.winList = ["-----","-----","-----","-----"]
 
     var grid = document.getElementById("Grid");
-    var name = "Bob";
+    var name = UserDataFactory.name;
 
     function cellClick(event) {
       var cellId = event.target.id;
