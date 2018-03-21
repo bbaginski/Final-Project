@@ -202,7 +202,7 @@ input[type="text"] {
     -webkit-mask-position: -50%;
   }
 }
-}
+
 #Grid .winner:hover {
   background-color: yellow;
 }
