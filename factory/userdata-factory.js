@@ -15,7 +15,7 @@
         }
   
         function getData () {
-           
+           console.log("squares");
           return data;
         }
 
