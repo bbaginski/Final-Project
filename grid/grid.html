@@ -7,11 +7,11 @@
         <div class="quarter">4</div>
     </div>
     <div id="hometeamScore" class="row">
-        <div class="team">Pistons</div>
+        <div class="team">{{$ctrl.teaminfo.game.homeTeam.Name}}</div>
         <div ng-repeat="score in $ctrl.homeTeamScore track by $index" id="hometeamQ{{$index + 1}}" class="score">{{score}}</div>
     </div>
     <div id="awayteamScore" class="row">
-        <div class="team">Away</div>
+        <div class="team">{{$ctrl.teaminfo.game.awayTeam.Name}}</div>
         <div ng-repeat="score in $ctrl.awayTeamScore track by $index" id="awayteamQ{{$index + 1}}" class="score">{{score}}</div>
     </div>
     <div id="winnerList" class="row">
@@ -20,9 +20,9 @@
     </div>
 </div>
 <div id="Grid-wrap">
-    <div id="Grid">
+    <div id="Grid"> 
         <div id="Col-label-header" class="row">
-            <div class="row-lable"><img src="/images/pistons.png" alt="pistons" /></div>
+            <div class="row-lable"><img id="logoImg" src="/images/pistons.png" alt="pistons" /></div>
             <div ng-repeat="Away in $ctrl.awayTeamBet" class="col-label">{{Away}} </div>
         </div>
         <div ng-repeat="Home in $ctrl.homeTeamBet" id="Row-{{$index + 1}}" class="row">

@@ -2,21 +2,28 @@
     angular.module("app").controller("GridController", function($http, UserDataFactory) {
 
         var vm = this;
-        var savedSquare = [undefined, "bob", undefined, undefined, "brian"];
+        var savedSquare = [undefined, "bob", undefined, undefined, "brian", undefined, undefined, undefined, undefined, undefined, undefined, "John"];
         vm.awayTeamScore = [];
         vm.homeTeamScore = [];
-      
+        vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
+        vm.awayTeamBet = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6];
+        vm.winList = ["-----", "-----", "-----", "-----"];
+        // vm.homeTeamScore = [6, 6, 0, 0];
+        // vm.awayTeamScore = [2, 5, 0, 0];
+        
         $http({
             method: "GET",
-            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315",
-            qs: { fordate: "20180316?" },
+            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315", 
             headers: {
                 "Cache-Control": "no-cache",
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
             }
         }).then(function mySuccess(response) {
-            var game = response.data.scoreboard.gameScore[0];            
-            // var awayTeamName = response.data.scoreboard.fullgameschedule.gameentry.awayTeam.name["pistons"];
+            var games = response.data.scoreboard.gameScore.filter(function(data){
+                return data.game.awayTeam.Name === 'Pistons' || data.game.homeTeam.Name === 'Pistons'
+            }); 
+            var game = games[0];  
+            vm.teaminfo = game;         
             var quarterSummary = game.quarterSummary.quarter;
             vm.homeTeamScore = quarterSummary.map(function(quarter) {
                 return quarter.homeScore;
@@ -57,15 +64,11 @@
         };
 
 
-        vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
-        vm.awayTeamBet = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6];
-        // vm.homeTeamScore = [6, 6, 0, 0];
-        // vm.awayTeamScore = [2, 5, 0, 0];
-        vm.winList = ["-----", "-----", "-----", "-----"]
+        
 
         var grid = document.getElementById("Grid");
         var name = UserDataFactory.getData() || [];
-        var betCount = 0;
+      
         function cellClick(event) {
             var cellId = event.target.id;
             var cellIdNum = cellId.replace(/\D/g, "");
@@ -82,8 +85,9 @@
                 event.target.classList.add("selected");
                 event.target.innerHTML = name;
                 savedSquare[cellIdNum] = name;
-                // UserDataFactory.setBet(cellIdNum[betCount]) || [];
-                // betCount++
+                console.log(cellIdNum);
+                UserDataFactory.setBet(cellIdNum) || [];
+                 
             }
         }
 
