@@ -12,16 +12,17 @@ body {
 }
 
 .PageWrap {
-  width: 75%;
-  min-width: 360px;
-  margin: 0 auto;
-  font-family: "Fjalla One", sans-serif;
-  position: relative;
+    width: 75%;
+    min-width: 360px;
+    margin: 0 auto;
+    font-family: "Fjalla One", sans-serif;
+    position: relative;
 }
+
 footer {
-  text-align: right;
-  margin: 20px 0 0;
-  font-size: 12px;
+    text-align: right;
+    margin: 20px 0 0;
+    font-size: 12px;
 }
 
 
@@ -114,12 +115,14 @@ input[type="text"] {
     padding: 10px;
     z-index: 5;
 }
-#gamedate{
-  border-bottom: solid 1px #fff; 
-  text-align: center;
+
+#gamedate {
+    border-bottom: solid 1px #fff;
+    text-align: center;
 }
+
 #Scoreboard .team {
-  align-self: center;
+    align-self: center;
 }
 
 #Scoreboard .score {
@@ -132,59 +135,64 @@ input[type="text"] {
     padding: 2px;
     margin: 5px;
 }
-#winnerList{
-  border-top: solid 1px #fff;
-  margin:10px 0 0 0;
-}
-#Scoreboard .winnerName {
-  padding: 2px;
-  margin: 5px;
-  text-transform: uppercase;
-  color: yellow;
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    #000 30%,
-    rgba(0, 0, 0, 0.6) 50%,
-    #000 70%
-  );
-  -webkit-mask-size: 200%;
-  animation: shine 4s infinite;
-}
-#menu{
-  text-align: right;
-  margin:20px 5px;
-}
-#menu a{
-text-decoration: none;
-color:#000;
-font-size: 20px;
-text-transform: uppercase;
 
+#winnerList {
+    border-top: solid 1px #fff;
+    margin: 10px 0 0 0;
 }
-#menu a:hover{
-  text-decoration: none;
-  color:#006bb6;
-  
-  }
-#Grid-wrap, #Schedule {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
+
+#Scoreboard .winnerName {
+    padding: 2px;
+    margin: 5px;
+    text-transform: uppercase;
+    color: yellow;
+    -webkit-mask-image: linear-gradient( -75deg, #000 30%, rgba(0, 0, 0, 0.6) 50%, #000 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 4s infinite;
 }
-#logoImg{max-height: 100px;}
+
+#menu {
+    text-align: right;
+    margin: 20px 5px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#menu a:hover {
+    text-decoration: none;
+    color: #006bb6;
+}
+
+#Grid-wrap,
+#Schedule {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#logoImg {
+    max-height: 100px;
+}
+
 #Grid .cell {
-  border: solid 1px #333;
-  min-height: 50px;
-  text-transform: uppercase;
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border: solid 1px #333;
+    min-height: 50px;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 #Grid .cell span {
-  display: inline-block;
+    display: inline-block;
 }
 
 #Grid .cell:hover {
@@ -197,28 +205,30 @@ text-transform: uppercase;
     color: #fff;
     border-color: #fff;
 }
+
 #Grid .row-label {
-  border-top: solid 1px #000;
-  border-right: solid 2px #000;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 0 50px;
+    border-top: solid 1px #000;
+    border-right: solid 2px #000;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 50px;
 }
 
 #Grid .col-label {
-  border-left: solid 1px #000;
-  border-bottom: solid 2px #000;
-  min-height: 50px;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 0 0 0;
+    border-left: solid 1px #000;
+    border-bottom: solid 2px #000;
+    min-height: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 0 0;
 }
+
 #Col-label-header .row-label {
-  border: none !important;
+    border: none !important;
 }
 
 #Grid .Row-lable {
@@ -240,28 +250,22 @@ text-transform: uppercase;
 }
 
 #Grid .winner {
-  background-color: yellow;
-  color: #000;
-  border-color: #000;
-  cursor: not-allowed;
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    #000 30%,
-    rgba(0, 0, 0, 0.6) 50%,
-    #000 70%
-  );
-  -webkit-mask-size: 200%;
-  animation: shine 3s infinite;
+    background-color: yellow;
+    color: #000;
+    border-color: #000;
+    cursor: not-allowed;
+    -webkit-mask-image: linear-gradient( -75deg, #000 30%, rgba(0, 0, 0, 0.6) 50%, #000 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 3s infinite;
 }
 
 @-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-
-  to {
-    -webkit-mask-position: -50%;
-  }
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
 }
 
 #Grid .winner:hover {
@@ -269,94 +273,129 @@ text-transform: uppercase;
 }
 
 #logoImg {
-  bottom: 0;
-  position: relative;
+    bottom: 0;
+    position: relative;
 }
 
 @-webkit-keyframes bounce {
-  0% {
-    bottom: 5px;
-  }
-  25%,
-  75% {
-    bottom: 15px;
-  }
-  50% {
-    bottom: 20px;
-  }
-  100% {
-    bottom: -10px;
-  }
+    0% {
+        bottom: 5px;
+    }
+    25%,
+    75% {
+        bottom: 15px;
+    }
+    50% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: -10px;
+    }
 }
+
 #HomeTeamSide {
-  position: absolute;
-  left: -30px;
-  top: 50%;
-  transform: translate(0, -50%);
-  font-size: 40px;
-  text-transform: uppercase;
-  transform: rotate(-90deg);
-  opacity: 0.3;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 40px;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    opacity: 0.3;
 }
+
 #AwayTeamSide {
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-size: 40px;
-  text-transform: uppercase;
-  opacity: 0.3;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 40px;
+    text-transform: uppercase;
+    opacity: 0.3;
 }
+
+
 /* *************************************************************************** */
+
+
 /* resposive changes  */
+
+
 /* *************************************************************************** */
+
 @media screen and (max-width: 1080px) {
-  .PageWrap {
-    width: 98%;
-  }
+    .PageWrap {
+        width: 98%;
+    }
 }
+
 @media screen and (max-width: 800px) {
-  #Grid .cell span {
-    transform: rotate(-90deg);
-  }
-  #Grid .cell {
-    width: 15px;
-    height: 100px;
-    overflow: hidden;
-  }
-  #HomeTeamSide {
-    font-size: 26px;
-  }
-  #AwayTeamSide {
-    font-size: 26px;
-  }
-  #Grid .row-label {
-    padding: 0 0 0 10px;
-  }
-  #Grid .row-label {
-    padding: 0 0 0 10px;
-  }
+    #Grid .cell span {
+        transform: rotate(-90deg);
+    }
+    #Grid .cell {
+        width: 15px;
+        height: 100px;
+        overflow: hidden;
+    }
+    #HomeTeamSide {
+        font-size: 26px;
+    }
+    #AwayTeamSide {
+        font-size: 26px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 10px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 10px;
+    }
 }
+
 @media screen and (max-width: 600px) {
-  .PageWrap {
-    width: 99%;
-  }
-  #Grid .cell span {
-    transform: rotate(-90deg);
-  }
-  #Grid .col-label,
-  #Grid .row-label {
-    font-size: 20px;
-  }
-  #Grid .cell {
-    width: 15px;
-    height: 100px;
-    overflow: hidden;
-  }
-  #Grid .row-label {
-    padding: 0 0 0 0px;
-  }
-  #Grid .row-label {
-    padding: 0 0 0 0px;
-  }
+    .PageWrap {
+        width: 99%;
+    }
+    #Grid .cell span {
+        transform: rotate(-90deg);
+    }
+    #Grid .col-label,
+    #Grid .row-label {
+        font-size: 20px;
+    }
+    #Grid .cell {
+        width: 15px;
+        height: 100px;
+        overflow: hidden;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 0px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 0px;
+    }
+}
+
+
+/* *************************************************************************** */
+
+
+/* shedule component*/
+
+
+/* *************************************************************************** */
+
+#Schedule {
+    padding: 25px
+}
+
+#chart {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#chart > div {
+    width: 30%;
+    padding: 5px;
+    margin: 10px;
 }

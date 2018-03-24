@@ -15,7 +15,7 @@ angular.module("app").controller("ScheduleController", function($http) {
             url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/full_game_schedule.json",
             params: {
                 date: "since-yesterday",
-                team: 'det'
+                ///team: 'det'
             },
 
             headers: {
