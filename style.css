@@ -12,7 +12,6 @@ body {
 }
 
 .PageWrap {
-<<<<<<< HEAD
   width: 75%;
   min-width: 360px;
   margin: 0 auto;
@@ -23,18 +22,6 @@ footer {
   text-align: right;
   margin: 20px 0 0;
   font-size: 12px;
-=======
-    width: 75%;
-    min-width: 360px;
-    margin: 0 auto;
-    font-family: 'Fjalla One', sans-serif;
-}
-
-footer {
-    text-align: right;
-    margin: 20px 0 0;
-    font-size: 12px;
->>>>>>> b08f05e035676ad6a68b77fa2026ec0afea27c2b
 }
 
 
