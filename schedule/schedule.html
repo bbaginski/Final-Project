@@ -1,1 +1,7 @@
-<div id="Schedule">SCHEDULE</div>
+<div ng-repeat="game in $ctrl.games">
+    <p>Away: {{game.awayTeam.Name}}</p>
+    <p>Home: {{game.homeTeam.Name}}</p>
+    <p>Location: {{game.location}}</p>
+    <p>Date: {{game.date}}</p>
+    <p>Time: {{game.time}}</p>
+</div>

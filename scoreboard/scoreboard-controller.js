@@ -15,8 +15,7 @@
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
             }
         }).then(function mySuccess(response) {
-            vm.teamName = response.data;
-            console.log(vm.teamName);
+            vm.teamName = response.data; 
         }, function myError(response) {
             vm.status = response.statusText;
         });
