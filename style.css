@@ -26,11 +26,7 @@ footer {
 
 
 /* *************************************************************************** */
-
-
 /* Registration Componet  */
-
-
 /* *************************************************************************** */
 
 #fieldsContainer {
@@ -86,11 +82,7 @@ input[type="text"] {
 
 
 /* *************************************************************************** */
-
-
 /* Grid Componet  */
-
-
 /* *************************************************************************** */
 
 .row {
@@ -185,6 +177,10 @@ text-transform: uppercase;
 }
 #Grid .cell span {
   display: inline-block;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 #Grid .cell:hover {
@@ -290,7 +286,7 @@ text-transform: uppercase;
 }
 #HomeTeamSide {
   position: absolute;
-  left: -30px;
+  left: -27px;
   top: 50%;
   transform: translate(0, -50%);
   font-size: 40px;
