@@ -2,8 +2,8 @@
     angular.module("app").controller("GridController", function($http, UserDataFactory) {
 
         var vm = this;
-      //  var savedSquare = [undefined, "Brittney", "Jennifer", "Elisia", "Brandon", undefined, "Tim", "Elizabeth", "Brian", "James", "Matthew", undefined, "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", undefined, "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Tim", "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", undefined, "Elizabeth", "Brian", "James", "Matthew", "Vinvith", undefined, "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", undefined, "James", "Matthew", "Vinvith", "Alec", undefined, "Emily", "Spencer", "Tim", "Brittney", undefined, "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", "Tim", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke"];
-         var savedSquare = JSON.parse(localStorage.getItem('savedSquare')).map(function(square) {
+       /// var savedSquare = [undefined, "Brittney", "Jennifer", "Elisia", "Brandon", undefined, "Tim", "Elizabeth", "Brian", "James", "Matthew", undefined, "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", undefined, "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Tim", "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", undefined, "Elizabeth", "Brian", "James", "Matthew", "Vinvith", undefined, "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", undefined, "James", "Matthew", "Vinvith", "Alec", undefined, "Emily", "Spencer", "Tim", "Brittney", undefined, "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", "Tim", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke"];
+        var savedSquare = JSON.parse(localStorage.getItem('savedSquare')).map(function(square) {
             if (!square) {
                 return undefined;
             }
@@ -17,20 +17,43 @@
         // vm.homeTeamScore = [6, 6, 0, 0];
         // vm.awayTeamScore = [2, 5, 0, 0];
 
+        //get todays date ------------------------------
+        Date.prototype.yyyymmdd = function() {
+            var mm = this.getMonth() + 1; // getMonth() is zero-based
+            var dd = this.getDate();
+          
+            return [this.getFullYear(),
+                    (mm>9 ? '' : '0') + mm,
+                    (dd>9 ? '' : '0') + dd
+                   ].join('');
+          };          
+          var date = new Date();
+          var nowDate = date.yyyymmdd();
+          //------------------------------
+
+
         $http({
             method: "GET",
-            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315",
+            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate="+nowDate,
             headers: {
                 "Cache-Control": "no-cache",
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
             }
         }).then(function mySuccess(response) {
-            var games = response.data.scoreboard.gameScore.filter(function(data) {
-                return data.game.awayTeam.Name === 'Pistons' || data.game.homeTeam.Name === 'Pistons'
-            });
+            var games = response.data.scoreboard.gameScore;
+            // .filter(function(data) {
+            //     return data.game.awayTeam.Name === 'Pistons' || data.game.homeTeam.Name === 'Pistons'
+            // });
             var game = games[0];
             vm.teaminfo = game;
-            var quarterSummary = game.quarterSummary.quarter;
+            var quarterSummary;
+            if (game.quarterSummary) {
+                quarterSummary =  game.quarterSummary.quarter;
+            } else {
+                var defaultQuarter = {homeScore: 0, awayScore: 0};
+                quarterSummary = [defaultQuarter, defaultQuarter, defaultQuarter, defaultQuarter];
+            }
+            
             vm.homeTeamScore = quarterSummary.map(function(quarter) {
                 return quarter.homeScore;
             });
@@ -43,14 +66,14 @@
 
 
 
-
-
         vm.showName = function(num) {
             return savedSquare[num];
         };
         vm.isTaken = function(num) {
-            if (savedSquare[num] !== undefined) {
+            if (savedSquare[num] !== undefined && savedSquare[num] !== name) {
                 return "taken";
+            } else if (savedSquare[num] === name){
+                return "selected";
             }
         };
         vm.isWinner = function(home, away, cellnum) {
@@ -95,9 +118,12 @@
                 UserDataFactory.setBet(cellIdNum) || [];
 
             }
-             localStorage.setItem('savedSquare', JSON.stringify(savedSquare));
+            localStorage.setItem('savedSquare', JSON.stringify(savedSquare));
         }
 
         grid.addEventListener("click", cellClick, false);
+  
+
+
     });
 })();

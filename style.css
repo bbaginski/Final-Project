@@ -1,225 +1,389 @@
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
+
 body {
-  background: url(images/basketball-floor-texture.jpg) center;
+    background: url(images/basketball-floor-texture.jpg) center;
 }
+
 .PageWrap {
-  width: 75%;
-  min-width: 360px;
-  margin: 0 auto;
-  font-family: 'Fjalla One', sans-serif;
+    width: 75%;
+    min-width: 360px;
+    margin: 0 auto;
+    font-family: "Fjalla One", sans-serif;
+    position: relative;
 }
-footer{
-  text-align: right;
-  margin:20px 0 0;
-  font-size: 12px;
+
+footer {
+    text-align: right;
+    margin: 20px 0 0;
+    font-size: 12px;
 }
+
 
 /* *************************************************************************** */
 /* Registration Componet  */
 /* *************************************************************************** */
 
 #fieldsContainer {
-  background-color: white;
-  width: 450px;
-  border: 1px solid;
-  border-radius: 10px;
-  margin: 200px auto 0;
-  padding: 25px;
-
-  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    width: 450px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 200px auto 0;
+    padding: 25px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 60;
-  -moz-border-radius: 60;
-  border-radius: 60px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 60;
+    -moz-border-radius: 60;
+    border-radius: 60px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
 }
 
 #regButton {
-  background-color: aqua;
-  border: 1px, solid;
+    background-color: aqua;
+    border: 1px, solid;
 }
+
 input[type="text"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
+
 
 /* *************************************************************************** */
 /* Grid Componet  */
 /* *************************************************************************** */
+
 .row {
-  display: flex;
-  width: 100%;
-  text-align: center;
+    display: flex;
+    width: 100%;
+    text-align: center;
 }
-.row > div {
-  flex: 1;
-  border: solid 1px transparent;
+
+.row>div {
+    flex: 1;
+    border: solid 1px transparent;
 }
+
 #Scoreboard {
-  max-width: 600px;
-  color: #fff;
-  background: #000;
-  margin: 25px auto;
-  border-radius: 5px;
-  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  z-index: 5;
+    max-width: 600px;
+    color: #fff;
+    background: #000;
+    margin: 25px auto;
+    border-radius: 5px;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    z-index: 5;
 }
+
+#gamedate {
+    border-bottom: solid 1px #fff;
+    text-align: center;
+}
+
 #Scoreboard .team {
-  align-self:center;
+    align-self: center;
 }
+
 #Scoreboard .score {
-  border: solid 1px #fff;
-  padding: 2px;
-  margin: 5px;
+    border: solid 1px #fff;
+    padding: 2px;
+    margin: 5px;
 }
+
 #Scoreboard .quarter {
-  padding: 2px;
-  margin: 5px;
+    padding: 2px;
+    margin: 5px;
 }
+
+#winnerList {
+    border-top: solid 1px #fff;
+    margin: 10px 0 0 0;
+}
+
 #Scoreboard .winnerName {
-  padding: 2px;
-  margin: 5px;
-  text-transform: uppercase;
-  color:yellow;  
-  -webkit-mask-image: linear-gradient(-75deg, #000 30%, rgba(0,0,0,.6) 50%, #000 70%);
-  -webkit-mask-size: 200%;
-  animation: shine 4s infinite;
+    padding: 2px;
+    margin: 5px;
+    text-transform: uppercase;
+    color: yellow;
+    -webkit-mask-image: linear-gradient( -75deg, #000 30%, rgba(0, 0, 0, 0.6) 50%, #000 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 4s infinite;
 }
-#Grid-wrap {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+
+#menu {
+    text-align: right;
+    margin: 20px 5px;
 }
+
+#menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#menu a:hover {
+    text-decoration: none;
+    color: #006bb6;
+}
+
+#Grid-wrap,
+#Schedule {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#logoImg {
+    max-height: 100px;
+}
+
 #Grid .cell {
-  border: solid 1px #333;
-  min-height: 50px;
-  text-transform: uppercase;  
-  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    border: solid 1px #333;
+    min-height: 50px;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#Grid .cell span {
+  display: inline-block;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
 #Grid .cell:hover {
-  background: lightblue;
-  cursor: pointer;
+    background: lightblue;
+    cursor: pointer;
 }
+
 #Grid .cell.selected {
-  background: #006bb6;
-  color: #fff;
-  border-color: #fff;
+    background: #006bb6;
+    color: #fff;
+    border-color: #fff;
 }
-#Grid .row-lable {
-  border-top: solid 1px #000;
-  border-right: solid 2px #000;
-  font-size: 30px;
-  padding: 30px 0 0 0;
-}
-#Grid .col-label {
-  border-left: solid 1px #000;
-  border-bottom: solid 2px #000;
-  min-height: 50px;
-  font-size: 30px;
-  padding: 30px 0 0 0;
-}
-#Col-label-header .row-lable {
-  border: none !important;
-}
-#Grid .Row-lable {
-  border-top: solid 1px #000;
-  border-bottom: solid 1px #000;
-  min-height: 100px;
+
+#Grid .row-label {
+    border-top: solid 1px #000;
+    border-right: solid 2px #000;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 50px;
 }
 
 #Grid .col-label {
-  border-left: solid 1px #000;
-  border-bottom: solid 2px #000;
-  min-height: 50px;
-  font-size: 30px;
-  padding: 30px 0 0 0;
+    border-left: solid 1px #000;
+    border-bottom: solid 2px #000;
+    min-height: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 0 0;
 }
 
-#Col-label-header .row-lable {
-  border: none;
+#Col-label-header .row-label {
+    border: none !important;
 }
 
 #Grid .Row-lable {
-  border-top: solid 1px #000;
-  border-bottom: solid 1px #000;
-  min-height: 100px;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+    min-height: 100px;
 }
+
 #Grid .taken {
-  background-color: #ed174c;
-  color: #fff;
-  border-color: #fff;
+    background-color: #ed174c;
+    color: #fff;
+    border-color: #fff;
 }
+
 #Grid .taken:hover {
-  border-color: #ed174c;
-  cursor: not-allowed;
-  background-color: #ed174c;
+    border-color: #ed174c;
+    cursor: not-allowed;
+    background-color: #ed174c;
 }
+
 #Grid .winner {
-  background-color: yellow;
-  color: #000;
-  border-color: #000;
-  cursor: not-allowed;  
-  -webkit-mask-image: linear-gradient(-75deg, #000 30%, rgba(0,0,0,.6) 50%, #000 70%);
-  -webkit-mask-size: 200%;
-  animation: shine 3s infinite;
+    background-color: yellow;
+    color: #000;
+    border-color: #000;
+    cursor: not-allowed;
+    -webkit-mask-image: linear-gradient( -75deg, #000 30%, rgba(0, 0, 0, 0.6) 50%, #000 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 3s infinite;
 }
 
 @-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-  
-  to {
-    -webkit-mask-position: -50%;
-  }
-}
-#Grid .winner:hover {
-  background-color: yellow;
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
 }
 
-#logoImg{
-  bottom:0;
-  position: relative;
-animation:bounce 1s infinite;
+#Grid .winner:hover {
+    background-color: yellow;
+}
+
+#logoImg {
+    bottom: 0;
+    position: relative;
 }
 
 @-webkit-keyframes bounce {
-  0%       { bottom:5px; }
-  25%, 75% { bottom:15px; }
-  50%      { bottom:20px; }
-  100%     {bottom:-10px; }
+    0% {
+        bottom: 5px;
+    }
+    25%,
+    75% {
+        bottom: 15px;
+    }
+    50% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: -10px;
+    }
+}
+
+#HomeTeamSide {
+  position: absolute;
+  left: -27px;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 40px;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  opacity: 0.3;
+}
+
+#AwayTeamSide {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 40px;
+    text-transform: uppercase;
+    opacity: 0.3;
+}
+
+
+/* *************************************************************************** */
+/* resposive changes  */
+/* *************************************************************************** */
+
+@media screen and (max-width: 1080px) {
+    .PageWrap {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #Grid .cell span {
+        transform: rotate(-90deg);
+    }
+    #Grid .cell {
+        width: 15px;
+        height: 100px;
+        overflow: hidden;
+    }
+    #HomeTeamSide {
+        font-size: 26px;
+    }
+    #AwayTeamSide {
+        font-size: 26px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 10px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .PageWrap {
+        width: 99%;
+    }
+    #Grid .cell span {
+        transform: rotate(-90deg);
+    }
+    #Grid .col-label,
+    #Grid .row-label {
+        font-size: 20px;
+    }
+    #Grid .cell {
+        width: 15px;
+        height: 100px;
+        overflow: hidden;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 0px;
+    }
+    #Grid .row-label {
+        padding: 0 0 0 0px;
+    }
+}
+
+
+/* *************************************************************************** */
+/* shedule component*/
+/* *************************************************************************** */
+
+#Schedule {
+    padding: 25px
+}
+
+#chart {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#chart > div {
+    width: 30%;
+    padding: 5px;
+    margin: 10px;
 }
