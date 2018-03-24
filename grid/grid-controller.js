@@ -3,6 +3,12 @@
 
         var vm = this;
         var savedSquare = [undefined, "Brittney", "Jennifer", "Elisia", "Brandon", undefined, "Tim", "Elizabeth", "Brian", "James", "Matthew", undefined, "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", undefined, "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Tim", "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", undefined, "Elizabeth", "Brian", "James", "Matthew", "Vinvith", undefined, "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", undefined, "James", "Matthew", "Vinvith", "Alec", undefined, "Emily", "Spencer", "Tim", "Brittney", undefined, "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", "Tim", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke"];
+        // var savedSquare = JSON.parse(localStorage.getItem('savedSquare')).map(function(square) {
+        //     if (!square) {
+        //         return undefined;
+        //     }
+        //     return square;
+        // });
         vm.awayTeamScore = [];
         vm.homeTeamScore = [];
         vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
@@ -10,20 +16,20 @@
         vm.winList = ["-----", "-----", "-----", "-----"];
         // vm.homeTeamScore = [6, 6, 0, 0];
         // vm.awayTeamScore = [2, 5, 0, 0];
-        
+
         $http({
             method: "GET",
-            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315", 
+            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180315",
             headers: {
                 "Cache-Control": "no-cache",
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
             }
         }).then(function mySuccess(response) {
-            var games = response.data.scoreboard.gameScore.filter(function(data){
+            var games = response.data.scoreboard.gameScore.filter(function(data) {
                 return data.game.awayTeam.Name === 'Pistons' || data.game.homeTeam.Name === 'Pistons'
-            }); 
-            var game = games[0];  
-            vm.teaminfo = game;         
+            });
+            var game = games[0];
+            vm.teaminfo = game;
             var quarterSummary = game.quarterSummary.quarter;
             vm.homeTeamScore = quarterSummary.map(function(quarter) {
                 return quarter.homeScore;
@@ -64,15 +70,15 @@
         };
 
 
-        
+
 
         var grid = document.getElementById("Grid");
         var name = UserDataFactory.getData() || [];
-      
+
         function cellClick(event) {
             var cellId = event.target.id;
             var cellIdNum = cellId.replace(/\D/g, "");
-          
+
             if (event.target.classList.contains("selected")) {
                 event.target.classList.remove("selected");
                 event.target.innerHTML = "";
@@ -87,8 +93,9 @@
                 savedSquare[cellIdNum] = name;
                 console.log(cellIdNum);
                 UserDataFactory.setBet(cellIdNum) || [];
-                 
+
             }
+            // localStorage.setItem('savedSquare', JSON.stringify(savedSquare));
         }
 
         grid.addEventListener("click", cellClick, false);

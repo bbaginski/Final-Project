@@ -1,7 +1,13 @@
-<div ng-repeat="game in $ctrl.games">
-    <p>Away: {{game.awayTeam.Name}}</p>
-    <p>Home: {{game.homeTeam.Name}}</p>
-    <p>Location: {{game.location}}</p>
-    <p>Date: {{game.date}}</p>
-    <p>Time: {{game.time}}</p>
+<div id="Schedule">
+
+    <div class="row">
+        <div ng-repeat="game in $ctrl.games">
+            <div>Location: {{game.location}}</div>
+            <div>Date: {{game.date}}</div>
+            <div>Time: {{game.time}}</div>
+            <div>Away: {{game.awayTeam.Name}}</div>
+            <div>Home: {{game.homeTeam.Name}}</div>
+        </div>
+    </div>
+
 </div>
