@@ -1,6 +1,7 @@
 <div id="ScoreBoard">
+        <div id="gamedate">{{$ctrl.teaminfo.game.date}} at {{$ctrl.teaminfo.game.time}}</div>
     <div class="row">
-        <div>Q</div>
+        <div class="quarter">Q</div>
         <div class="quarter">1</div>
         <div class="quarter">2</div>
         <div class="quarter">3</div>
@@ -19,16 +20,21 @@
         <div ng-repeat="win in $ctrl.winList track by $index" id="winnerQ{{$index + 1}}" class="winnerName">{{win}}</div>
     </div>
 </div>
+<div>
+<div id="menu"><a href ="/#!/schedule">Upcoming Schedule</a></div>
+</div>
 <div id="Grid-wrap">
+    <div id="HomeTeamSide">{{$ctrl.teaminfo.game.homeTeam.Name}}</div>
+    <div id="AwayTeamSide">{{$ctrl.teaminfo.game.awayTeam.Name}}</div>
     <div id="Grid"> 
         <div id="Col-label-header" class="row">
-            <div class="row-lable"><img id="logoImg" src="/images/pistons.png" alt="pistons" /></div>
+            <div class="row-label"><img id="logoImg" src="/images/nbalogo.png" alt="pistons" /></div>
             <div ng-repeat="Away in $ctrl.awayTeamBet" class="col-label">{{Away}} </div>
         </div>
         <div ng-repeat="Home in $ctrl.homeTeamBet" id="Row-{{$index + 1}}" class="row">
-            <div class="row-lable">{{Home}}</div>
+            <div class="row-label">{{Home}}</div>
             <div ng-repeat="Away in $ctrl.awayTeamBet" id="Cell-{{$ctrl.calcId($index, $parent.$index) }}" class="cell {{$ctrl.isTaken( $ctrl.calcId($index, $parent.$index))}}  {{$ctrl.isWinner(Home, Away, $ctrl.calcId($index, $parent.$index))}}" col-num="{{Away}}"
-                row-num="{{Home}}">{{$ctrl.showName( $ctrl.calcId($index, $parent.$index))}}</div>
+                row-num="{{Home}}"><span>{{$ctrl.showName( $ctrl.calcId($index, $parent.$index))}}</span></div>
         </div>
     </div>
 </div>

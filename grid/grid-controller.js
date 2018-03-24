@@ -2,7 +2,7 @@
     angular.module("app").controller("GridController", function($http, UserDataFactory) {
 
         var vm = this;
-        var savedSquare = [undefined, "bob", undefined, undefined, "brian", undefined, undefined, undefined, undefined, undefined, undefined, "John"];
+        var savedSquare = [undefined, "Brittney", "Jennifer", "Elisia", "Brandon", undefined, "Tim", "Elizabeth", "Brian", "James", "Matthew", undefined, "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", undefined, "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Tim", "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", undefined, "Elizabeth", "Brian", "James", "Matthew", "Vinvith", undefined, "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", undefined, "James", "Matthew", "Vinvith", "Alec", undefined, "Emily", "Spencer", "Tim", "Brittney", undefined, "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", "Tim", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke"];
         vm.awayTeamScore = [];
         vm.homeTeamScore = [];
         vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
