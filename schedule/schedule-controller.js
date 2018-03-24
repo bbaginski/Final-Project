@@ -13,7 +13,10 @@ angular.module("app").controller("ScheduleController", function($http) {
             method: "GET",
 
             url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/full_game_schedule.json",
-            params: { date: "since-yesterday", team: 'det' },
+            params: {
+                date: "since-yesterday",
+                ///team: 'det'
+            },
 
             headers: {
                 "Cache-Control": "no-cache",
