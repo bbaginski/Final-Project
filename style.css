@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
 * {
     box-sizing: border-box;
 }
@@ -35,7 +36,7 @@ footer {
     width: 450px;
     border: 1px solid;
     border-radius: 10px;
-    margin: 200px auto 0;
+    margin: 30px auto 0;
     padding: 25px;
     box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
@@ -386,4 +387,12 @@ input[type="text"] {
     width: 30%;
     padding: 5px;
     margin: 10px;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    font-size: 90px;
+    padding: 25px 25px 25px 10px;
+    font-family: 'Bungee Shade', cursive;
 }
