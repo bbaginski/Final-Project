@@ -13,9 +13,9 @@
         vm.homeTeamScore = [];
         vm.homeTeamBet = [6, 7, 8, 9, 1, 2, 3, 4, 5, 0];
         vm.awayTeamBet = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6];
-        vm.winList = ["-----", "-----", "-----", "-----"];
-        // vm.homeTeamScore = [6, 6, 0, 0];
-        // vm.awayTeamScore = [2, 5, 0, 0];
+        vm.winList = [];
+        // vm.homeTeamScore = [6];
+        // vm.awayTeamScore = [2];
 
         //get todays date ------------------------------
         Date.prototype.yyyymmdd = function() {
@@ -34,7 +34,9 @@
 
         $http({
             method: "GET",
-            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate="+nowDate,
+            //  url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate="+ nowDate +"&team=Spurs",
+            url: "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180322",
+          
             headers: {
                 "Cache-Control": "no-cache",
                 Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
@@ -51,7 +53,7 @@
                 quarterSummary =  game.quarterSummary.quarter;
             } else {
                 var defaultQuarter = {homeScore: 0, awayScore: 0};
-                quarterSummary = [defaultQuarter, defaultQuarter, defaultQuarter, defaultQuarter];
+                quarterSummary = [defaultQuarter];
             }
             
             vm.homeTeamScore = quarterSummary.map(function(quarter) {

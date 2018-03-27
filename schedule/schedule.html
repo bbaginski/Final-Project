@@ -2,11 +2,11 @@
 
     <div id ="chart">
         <div ng-repeat="game in $ctrl.games">
-            <div>Location: {{game.location}}</div>
-            <div>Date: {{game.date}}</div>
-            <div>Time: {{game.time}}</div>
-            <div>Away: {{game.awayTeam.Name}}</div>
-            <div>Home: {{game.homeTeam.Name}}</div>
+            <div>Date: <strong>{{game.date}}</strong></div>
+            <div>Away:<strong> {{game.awayTeam.Name}}</strong></div>
+            <div>Home:<strong> {{game.homeTeam.Name}}</strong></div>
+            <div>Time:<strong> {{game.time}}</strong></div>              
+            <div>Location: <strong>{{game.location}}</strong></div>
         </div>
     </div>
 
