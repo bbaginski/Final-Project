@@ -310,8 +310,16 @@ input[type="text"] {
     text-transform: uppercase;
     opacity: 0.3;
 }
-
-
+#TeamSelect{
+    float:left;
+}
+#TeamSelect select{
+    font-size:18px;
+    background:#fff;
+    border:none;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+}
 /* *************************************************************************** */
 /* resposive changes  */
 /* *************************************************************************** */

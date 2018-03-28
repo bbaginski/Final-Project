@@ -1,9 +1,9 @@
 <div id="ScoreBoard">
-        <div id="gamedate">{{$ctrl.teaminfo.game.date}} at {{$ctrl.teaminfo.game.time}}</div>
+    <div id="gamedate">{{$ctrl.teaminfo.game.date}} at {{$ctrl.teaminfo.game.time}}</div>
     <div class="row">
         <div class="quarter">Q</div>
-        <div ng-repeat="score in $ctrl.homeTeamScore track by $index"   class="quarter">{{$index + 1}}</div>
-         
+        <div ng-repeat="score in $ctrl.homeTeamScore track by $index" class="quarter">{{$index + 1}}</div>
+
     </div>
     <div id="hometeamScore" class="row">
         <div class="team">{{$ctrl.teaminfo.game.homeTeam.Name}}</div>
@@ -19,31 +19,33 @@
     </div>
 </div>
 <div>
-<div id="TeamSelect">
-    
-        <select ng-model="$ctrl.selectedTeam" ng-change="$ctrl.callAPI()">
-            <option ng-repeat="list in $ctrl.teamlist" value="{{list.tcode}}">{{list.team}}</option> 
+    <div id="TeamSelect">
+
+        <select ng-model="$ctrl.selectedTeam" ng-change="$ctrl.callAPI()"> 
+            <option ng-repeat="list in $ctrl.teamlist" value="{{list.tcode}}">{{list.team}}</option>
         </select>
         {{$ctrl.status}}
-       
-
-
-
-</div>
-<div id="menu"><a href ="/#!/schedule">Upcoming Schedule</a></div>
+    </div>
+    <div id="menu">
+        <a href="/#!/schedule">Upcoming Schedule &gt;</a>
+    </div>
 </div>
 <div id="Grid-wrap">
     <div id="HomeTeamSide">{{$ctrl.teaminfo.game.homeTeam.Name}}</div>
     <div id="AwayTeamSide">{{$ctrl.teaminfo.game.awayTeam.Name}}</div>
-    <div id="Grid"> 
+    <div id="Grid">
         <div id="Col-label-header" class="row">
-            <div class="row-label"><img id="logoImg" src="/images/nbalogo.png" alt="pistons" /></div>
+            <div class="row-label">
+                <img id="logoImg" src="/images/nbalogo.png" alt="pistons" />
+            </div>
             <div ng-repeat="Away in $ctrl.awayTeamBet" class="col-label">{{Away}} </div>
         </div>
         <div ng-repeat="Home in $ctrl.homeTeamBet" id="Row-{{$index + 1}}" class="row">
             <div class="row-label">{{Home}}</div>
-            <div ng-repeat="Away in $ctrl.awayTeamBet" id="Cell-{{$ctrl.calcId($index, $parent.$index) }}" class="cell {{$ctrl.isTaken( $ctrl.calcId($index, $parent.$index))}}  {{$ctrl.isWinner(Home, Away, $ctrl.calcId($index, $parent.$index))}}" col-num="{{Away}}"
-                row-num="{{Home}}"><span>{{$ctrl.showName( $ctrl.calcId($index, $parent.$index))}}</span></div>
+            <div ng-repeat="Away in $ctrl.awayTeamBet" id="Cell-{{$ctrl.calcId($index, $parent.$index) }}" class="cell {{$ctrl.isTaken( $ctrl.calcId($index, $parent.$index))}}  {{$ctrl.isWinner(Home, Away, $ctrl.calcId($index, $parent.$index))}}"
+                col-num="{{Away}}" row-num="{{Home}}">
+                <span>{{$ctrl.showName( $ctrl.calcId($index, $parent.$index))}}</span>
+            </div>
         </div>
     </div>
 </div>
