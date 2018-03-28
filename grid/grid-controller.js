@@ -1,7 +1,7 @@
 (function() {
   angular
     .module("app")
-    .controller("GridController", function($http, UserDataFactory) {
+    .controller("GridController", function($http, $timeout, UserDataFactory) {
       var vm = this;
       /// var savedSquare = [undefined, "Brittney", "Jennifer", "Elisia", "Brandon", undefined, "Tim", "Elizabeth", "Brian", "James", "Matthew", undefined, "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", undefined, "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", undefined, "Tim", "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", undefined, "Elizabeth", "Brian", "James", "Matthew", "Vinvith", undefined, "Brooke", "Emily", "Spencer", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", undefined, "James", "Matthew", "Vinvith", "Alec", undefined, "Emily", "Spencer", "Tim", "Brittney", undefined, "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke", "Emily", "Spencer", "Tim", undefined, "Brittney", "Jennifer", "Elisia", "Brandon", "Ja'mez", "Tim", "Elizabeth", "Brian", "James", "Matthew", "Vinvith", "Alec", "Brooke"];
       var savedSquare = JSON.parse(localStorage.getItem("savedSquare")).map(
@@ -18,6 +18,7 @@
       vm.awayTeamBet = [5, 4, 3, 2, 1, 0, 9, 8, 7, 6];
       vm.winList = [];
       vm.selectedTeam = "";
+      var lastSelected = "";
       vm.teamlist = [
         { team: "Atlanta Hawks ", tcode: "ATL" },
         { team: "Boston Celtics", tcode: "BOS" },
@@ -62,8 +63,15 @@
             Authorization: "Basic dHNpbXBzOlNwYXJ0YW4xOQ=="
           }
         }).then(
-          function mySuccess(response) {
+          function mySuccess(response) { 
+            vm.winList = [];
+            vm.status = '';
             var games = response.data.scoreboard.gameScore;
+            if (!games || !games.length) {
+                vm.selectedTeam = lastSelected;
+                return vm.status = 'NO CURRENT GAMES';
+            }
+            lastSelected = vm.selectedTeam;
             // .filter(function(data) {
             //     return data.game.awayTeam.Name === 'Pistons' || data.game.homeTeam.Name === 'Pistons'
             // });

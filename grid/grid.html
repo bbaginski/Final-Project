@@ -24,7 +24,7 @@
         <select ng-model="$ctrl.selectedTeam" ng-change="$ctrl.callAPI()">
             <option ng-repeat="list in $ctrl.teamlist" value="{{list.tcode}}">{{list.team}}</option> 
         </select>
-        {{selectedTeam}}
+        {{$ctrl.status}}
        
 
 
