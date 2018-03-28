@@ -20,12 +20,15 @@
 </div>
 <div>
 <div id="TeamSelect">
-        <select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+    
+        <select ng-model="$ctrl.selectedTeam" ng-change="$ctrl.callAPI()">
+            <option ng-repeat="list in $ctrl.teamlist" value="{{list.tcode}}">{{list.team}}</option> 
         </select>
+        {{selectedTeam}}
+       
+
+
+
 </div>
 <div id="menu"><a href ="/#!/schedule">Upcoming Schedule</a></div>
 </div>
