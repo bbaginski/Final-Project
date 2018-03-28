@@ -19,7 +19,7 @@
       vm.winList = [];
       vm.selectedTeam = "";
       vm.teamlist = [
-        { team: "Atlanta Hawks ", tcode: "ATL" },
+        { team: "Atlanta Hawks", tcode: "ATL" },
         { team: "Boston Celtics", tcode: "BOS" },
         { team: "Brooklyn Nets", tcode: "BRO" },
         { team: "Charlotte Bobcats", tcode: "CHA" },
@@ -28,7 +28,25 @@
         { team: "Dallas Mavericks", tcode: "DAL" },
         { team: "Denver Nuggets", tcode: "DEN" },
         { team: "Detroit Pistons", tcode: "DET" },
-        { team: "Golden State Warriors", tcode: "GSW" }
+        { team: "Houston Rockets", tcode: "HOU" },
+        { team: "Indiana Pacers", tcode: "IND" },
+        { team: "LA Clippers", tcode: "LAC" },
+        { team: "Memphis Grizzlies", tcode: "MEM" },
+        { team: "Miami Heat", tcode: "MIA" },
+        { team: "Milwaukee Bucks", tcode: "MIL" },
+        { team: "Minnesota Timberwolves", tcode: "MIN" },
+        { team: "New Orleans Pelicans", tcode: "NOP" },
+        { team: "New York Knicks", tcode: "NYK" },
+        { team: "Oklahoma City Thunder", tcode: "OKL" },
+        { team: "Orlando Magic", tcode: "ORL" },
+        { team: "Philadelphia Sixers", tcode: "PHI" },
+        { team: "Phoenix Suns", tcode: "PHX" },
+        { team: "Portland Trail Blazers", tcode: "POR" },
+        { team: "Sacramento Kings", tcode: "SAC" },
+        { team: "San Antonio Spurs", tcode: "SAS" },
+        { team: "Toronto Raptors", tcode: "TOR" },
+        { team: "Utah Jazz", tcode: "UTA" },
+        { team: "Washington Wizards", tcode: "WAS" }
       ];
       console.log(vm.selectedTeam);
 
